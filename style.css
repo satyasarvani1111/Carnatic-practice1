@@ -1,0 +1,470 @@
+/* ===========================
+   GLOBAL
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:"Comic Sans MS","Trebuchet MS",sans-serif;
+
+    background:linear-gradient(
+    135deg,
+    #FFE082,
+    #B3E5FC,
+    #F8BBD0,
+    #D1C4E9);
+
+    height:100vh;
+
+    overflow:hidden;
+
+}
+
+
+/* ===========================
+   MAIN CONTAINER
+=========================== */
+
+.container{
+
+    width:min(96vw,1700px);
+
+    height:100vh;
+
+    margin:auto;
+
+    padding:12px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+
+
+/* ===========================
+   HEADER
+=========================== */
+
+.header{
+
+    text-align:center;
+
+}
+
+
+.header h1{
+
+    font-size:36px;
+
+    color:#6A1B9A;
+
+    text-shadow:2px 2px 8px white;
+
+}
+
+
+.subtitle{
+
+    font-size:16px;
+
+    color:#1565C0;
+
+    font-weight:bold;
+
+}
+
+
+
+/* ===========================
+   TOP PANEL
+=========================== */
+
+.topPanel{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:40px;
+
+}
+
+
+.control{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+
+.control label{
+
+    font-size:22px;
+
+    color:#1565C0;
+
+    font-weight:bold;
+
+}
+
+
+
+select{
+
+    font-size:18px;
+
+    padding:8px 15px;
+
+    border-radius:15px;
+
+    border:none;
+
+    background:white;
+
+    box-shadow:0 4px 10px rgba(0,0,0,.15);
+
+}
+
+
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+
+.buttonPanel{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+}
+
+
+button{
+
+    border:none;
+
+    border-radius:40px;
+
+    padding:10px 28px;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    color:white;
+
+    cursor:pointer;
+
+}
+
+
+
+#startBtn{
+    background:#43A047;
+}
+
+#pauseBtn{
+    background:#FB8C00;
+}
+
+#restartBtn{
+    background:#1E88E5;
+}
+
+
+
+/* ===========================
+   LYRICS / SWARA BOX
+=========================== */
+
+
+.notes-box{
+
+    background:white;
+
+    border-radius:25px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+    height:360px;
+
+    overflow:hidden;
+
+    padding:10px;
+
+}
+
+
+.notes-box h2{
+
+    text-align:center;
+
+    color:#7B1FA2;
+
+    font-size:26px;
+
+    margin-bottom:5px;
+
+}
+
+
+
+#notesDisplay{
+
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:5px;
+
+    overflow:visible;
+
+}
+
+
+
+/* SWARA LINE */
+
+.note-line{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+}
+
+
+
+/* ===========================
+   SWARA TILES
+=========================== */
+
+
+.swara{
+
+    width:55px;
+
+    height:55px;
+
+    margin:4px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:15px;
+
+    font-size:28px;
+
+    font-weight:bold;
+
+    color:#333;
+
+    box-shadow:0 4px 10px rgba(0,0,0,.15);
+
+    transition:.25s;
+
+}
+
+
+
+.swara:nth-child(7n+1){
+    background:#FFE082;
+}
+
+.swara:nth-child(7n+2){
+    background:#A5D6A7;
+}
+
+.swara:nth-child(7n+3){
+    background:#90CAF9;
+}
+
+.swara:nth-child(7n+4){
+    background:#CE93D8;
+}
+
+.swara:nth-child(7n+5){
+    background:#FFCC80;
+}
+
+.swara:nth-child(7n+6){
+    background:#F48FB1;
+}
+
+.swara:nth-child(7n){
+    background:#80DEEA;
+}
+
+
+
+.swara.active{
+
+    transform:scale(1.2);
+
+    background:#FF5252 !important;
+
+    color:white;
+
+}
+
+
+
+/* ===========================
+   TALA
+=========================== */
+
+
+.tala-box{
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:10px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+}
+
+
+
+.tala-box h2{
+
+    text-align:center;
+
+    color:#7B1FA2;
+
+    font-size:24px;
+
+}
+
+
+
+#talaContainer{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:12px;
+
+}
+
+
+
+.talaBeat{
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:15px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+}
+
+
+
+.talaBeat:nth-child(1){background:#FFE082;}
+.talaBeat:nth-child(2){background:#A5D6A7;}
+.talaBeat:nth-child(3){background:#90CAF9;}
+.talaBeat:nth-child(4){background:#CE93D8;}
+.talaBeat:nth-child(5){background:#FFCC80;}
+.talaBeat:nth-child(6){background:#F48FB1;}
+.talaBeat:nth-child(7){background:#80DEEA;}
+.talaBeat:nth-child(8){background:#C5E1A5;}
+
+
+
+.talaBeat.active{
+
+    transform:scale(1.15);
+
+    background:#43A047 !important;
+
+    color:white;
+
+}
+
+
+
+#talaText{
+
+    text-align:center;
+
+    margin-top:8px;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    color:#6A1B9A;
+
+}
+
+
+
+/* ===========================
+   STATUS
+=========================== */
+
+
+.statusBox{
+
+    text-align:center;
+
+}
+
+
+#status{
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    color:#E65100;
+
+}
