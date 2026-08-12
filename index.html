@@ -2,132 +2,612 @@
 <html lang="en">
 
 <head>
+  <meta charset="UTF-8">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
 
-<title>🎵 Carnatic Sarali Practice</title>
+  <title>Sarali Swaras Practice</title>
 
-<link rel="stylesheet" href="style.css">
-
+  <link rel="stylesheet" href="style.css">
 </head>
+
 
 <body>
 
-<div class="container">
+<main class="app">
 
-    <header class="header">
 
-        <h1>🎵 Carnatic Sarali Practice</h1>
+  <!-- =========================
+       HEADER
+  ========================== -->
 
-        <p class="subtitle">
-            Learn • Listen • Practice
+  <header>
+
+    <p class="eyebrow">
+      ALL THE BEST
+    </p>
+
+    <h1>
+      Sarali Swaras Practice
+    </h1>
+
+    <p class="subtitle">
+      Practice at your pace with tala and Tanpura support.
+    </p>
+
+  </header>
+
+
+
+  <!-- =========================
+       LESSON CONTROLS
+  ========================== -->
+
+  <section
+    class="card controls"
+    aria-label="Sarali lesson controls"
+  >
+
+    <div class="control-group">
+
+
+      <!-- LESSON -->
+
+      <label for="lessonSelect">
+
+        Lesson
+
+        <select
+          id="lessonSelect"
+          aria-label="Select Sarali lesson"
+        >
+
+          <option value="1">
+            Sarali 1
+          </option>
+
+          <option value="2">
+            Sarali 2
+          </option>
+
+          <option value="3">
+            Sarali 3
+          </option>
+
+          <option value="4">
+            Sarali 4
+          </option>
+
+          <option value="5">
+            Sarali 5
+          </option>
+
+          <option value="6">
+            Sarali 6
+          </option>
+
+          <option value="7">
+            Sarali 7
+          </option>
+
+          <option value="8">
+            Sarali 8
+          </option>
+
+          <option value="9">
+            Sarali 9
+          </option>
+
+          <option value="10">
+            Sarali 10
+          </option>
+
+          <option value="11">
+            Sarali 11
+          </option>
+
+          <option value="12">
+            Sarali 12
+          </option>
+
+        </select>
+
+      </label>
+
+
+
+      <!-- SPEED -->
+
+      <label for="speedSelect">
+
+        Speed
+
+        <select
+          id="speedSelect"
+          aria-label="Select Sarali speed"
+        >
+
+          <option value="1">
+            1st speed
+          </option>
+
+          <option value="2">
+            2nd speed
+          </option>
+
+          <option value="3">
+            3rd speed
+          </option>
+
+        </select>
+
+      </label>
+
+
+    </div>
+
+
+
+    <!-- PLAY / RESTART -->
+
+    <div class="button-group">
+
+      <button
+        id="playBtn"
+        type="button"
+      >
+        ▶ Play
+      </button>
+
+
+      <button
+        id="restartBtn"
+        type="button"
+        class="secondary"
+      >
+        ↻ Restart
+      </button>
+
+    </div>
+
+
+  </section>
+
+
+
+  <!-- =========================
+       TANPURA
+  ========================== -->
+
+  <section
+    class="card tanpura"
+    aria-label="Tanpura controls"
+  >
+
+
+    <div>
+
+      <h2>
+        Tanpura
+      </h2>
+
+      <p>
+        Runs independently while you practise.
+      </p>
+
+    </div>
+
+
+
+    <div class="tanpura-controls">
+
+
+      <!-- SHRUTI -->
+
+      <label for="shrutiSelect">
+
+        Shruti
+
+        <select
+          id="shrutiSelect"
+          aria-label="Select Tanpura shruti"
+        >
+
+          <option value="C">
+            C
+          </option>
+
+          <option value="C#">
+            C#
+          </option>
+
+          <option value="D">
+            D
+          </option>
+
+          <option value="D#">
+            D#
+          </option>
+
+          <option value="E">
+            E
+          </option>
+
+          <option value="F">
+            F
+          </option>
+
+          <option value="F#">
+            F#
+          </option>
+
+          <option value="G">
+            G
+          </option>
+
+          <option value="G#">
+            G#
+          </option>
+
+          <option value="A">
+            A
+          </option>
+
+          <option value="A#">
+            A#
+          </option>
+
+          <option value="B">
+            B
+          </option>
+
+        </select>
+
+      </label>
+
+
+
+      <!-- VOLUME -->
+
+      <label class="volume">
+
+        Volume
+
+        <input
+          id="tanpuraVolume"
+          type="range"
+          min="0"
+          max="100"
+          value="60"
+        >
+
+        <output id="volumeValue">
+          60%
+        </output>
+
+      </label>
+
+
+
+      <!-- TANPURA BUTTON -->
+
+      <button
+        id="tanpuraBtn"
+        type="button"
+      >
+        ▶ Start Tanpura
+      </button>
+
+
+    </div>
+
+
+  </section>
+
+  <!-- =========================
+     METRONOME
+========================== -->
+
+<section
+  class="card metronome"
+  aria-label="Metronome controls"
+>
+
+  <div class="metronome-info">
+
+    <h2>
+      Metronome
+    </h2>
+
+    <p>
+      Set your practice tempo from 40 to 160 BPM.
+    </p>
+
+  </div>
+
+
+  <div class="metronome-controls">
+
+    <button
+      id="bpmMinus"
+      type="button"
+      class="bpm-adjust"
+      aria-label="Decrease BPM"
+    >
+      −
+    </button>
+
+
+    <div class="bpm-display">
+
+      <strong id="bpmValue">
+        60
+      </strong>
+
+      <span>
+        BPM
+      </span>
+
+    </div>
+
+
+    <button
+      id="bpmPlus"
+      type="button"
+      class="bpm-adjust"
+      aria-label="Increase BPM"
+    >
+      +
+    </button>
+
+
+    <input
+      id="bpmSlider"
+      type="range"
+      min="40"
+      max="160"
+      value="60"
+      step="1"
+      aria-label="Metronome BPM"
+    />
+
+
+    <button
+      id="metronomeBtn"
+      type="button"
+    >
+      ▶ Start Metronome
+    </button>
+
+  </div>
+
+</section>
+
+
+
+  <!-- =========================
+       CURRENT LESSON / NOTATION
+  ========================== -->
+
+  <section
+    class="card notation-card"
+    aria-label="Sarali notation"
+  >
+
+
+    <!-- NOTATION HEADER -->
+
+    <div class="notation-heading">
+
+
+      <div>
+
+        <p class="eyebrow">
+          CURRENT LESSON
         </p>
 
-    </header>
+        <h2 id="lessonTitle">
+          Sarali 1
+        </h2>
 
-    <div class="topPanel">
+      </div>
 
-        <div class="control">
 
-            <label>🎼 Sarali</label>
 
-            <select id="saraliSelect">
+      <p id="speedHint">
+        1st speed · 1 swara per beat
+      </p>
 
-                <option value="sarali1">Sarali 1</option>
-                <option value="sarali2">Sarali 2</option>
-                <option value="sarali3">Sarali 3</option>
-                <option value="sarali4">Sarali 4</option>
-                <option value="sarali5">Sarali 5</option>
-                <option value="sarali6">Sarali 6</option>
-                <option value="sarali7">Sarali 7</option>
-                <option value="sarali8">Sarali 8</option>
-                <option value="sarali9">Sarali 9</option>
-                <option value="sarali10">Sarali 10</option>
-                <option value="sarali11">Sarali 11</option>
-                <option value="sarali12">Sarali 12</option>
-
-            </select>
-
-        </div>
-
-        <div class="control">
-
-            <label>⚡ Speed</label>
-
-            <select id="speedSelect">
-
-                <option value="speed1">1st Speed</option>
-                <option value="speed2">2nd Speed</option>
-                <option value="speed3">3rd Speed</option>
-
-            </select>
-
-        </div>
 
     </div>
 
-    <div class="buttonPanel">
 
-        <button id="startBtn">
-            ▶ Start
-        </button>
 
-        <button id="pauseBtn">
-            ⏸ Pause
-        </button>
+    <!-- TWO COLUMN NOTATION -->
 
-        <button id="restartBtn">
-            🔄 Restart
-        </button>
+    <div class="notation-grid">
 
-    </div>
 
-    <div class="notes-box">
+      <!-- LEFT COLUMN -->
 
-        <h2>🎼 Swara Practice</h2>
+      <div>
 
-        <div id="notesDisplay"></div>
+        <h3>
+          Sarali Swaras
+        </h3>
 
-    </div>
+        <div
+          id="notation"
+          class="notation"
+          aria-live="polite"
+        ></div>
 
-    <div class="tala-box">
+      </div>
 
-        <h2>🥁 Adi Tala</h2>
 
-        <div id="talaContainer">
 
-            <div class="talaBeat">👏<br>1</div>
-            <div class="talaBeat">☝️<br>2</div>
-            <div class="talaBeat">☝️<br>3</div>
-            <div class="talaBeat">☝️<br>4</div>
+      <!-- RIGHT COLUMN -->
 
-            <div class="talaBeat">👏<br>5</div>
-            <div class="talaBeat">👋<br>6</div>
-            <div class="talaBeat">👏<br>7</div>
-            <div class="talaBeat">👋<br>8</div>
+      <div>
 
-        </div>
+        <h3>
+          Sarali Swaras
+        </h3>
 
-        <p id="talaText">
-            Ready
-        </p>
+        <div
+          id="previewNotation"
+          class="notation"
+          aria-live="polite"
+        ></div>
+
+      </div>
+
 
     </div>
 
-    <div class="statusBox">
 
-        <p id="status">
-            🎵 Ready to Practice
-        </p>
+  </section>
+
+
+
+  <!-- =========================
+       TALA
+  ========================== -->
+
+  <section
+    class="card tala"
+    aria-label="Tala at 60 beats per minute"
+  >
+
+
+    <div>
+
+      <h2>
+        Tala
+      </h2>
+
+      <p>
+        Fixed at 60 BPM
+      </p>
 
     </div>
 
-    <audio id="audioPlayer" preload="auto"></audio>
 
-</div>
+
+    <div
+      class="beats"
+      aria-label="Eight tala beats"
+    >
+
+      <span class="beat">
+        1
+      </span>
+
+      <span class="beat">
+        2
+      </span>
+
+      <span class="beat">
+        3
+      </span>
+
+      <span class="beat">
+        4
+      </span>
+
+      <span class="beat">
+        5
+      </span>
+
+      <span class="beat">
+        6
+      </span>
+
+      <span class="beat">
+        7
+      </span>
+
+      <span class="beat">
+        8
+      </span>
+
+    </div>
+
+
+  </section>
+
+
+
+  <!-- =========================
+       AUDIO / PROGRESS
+  ========================== -->
+
+  <section
+    class="audio-area"
+    aria-label="Audio player"
+  >
+
+
+    <!-- SARALI AUDIO -->
+
+    <audio
+      id="audioPlayer"
+      preload="auto"
+    ></audio>
+
+
+
+    <!-- TANPURA AUDIO -->
+
+    <audio
+      id="tanpuraPlayer"
+      preload="auto"
+      loop
+    ></audio>
+
+
+
+    <!-- PROGRESS -->
+
+    <div
+      class="progress-container"
+      aria-hidden="true"
+    >
+
+      <div
+        id="progressBar"
+        class="progress-bar"
+      ></div>
+
+    </div>
+
+
+
+    <!-- ERROR / STATUS MESSAGE -->
+
+    <p
+      id="audioMessage"
+      class="audio-message"
+      aria-live="polite"
+    ></p>
+
+
+  </section>
+
+
+</main>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================== -->
 
 <script src="script.js"></script>
+
 
 </body>
 
