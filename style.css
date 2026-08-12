@@ -1,470 +1,928 @@
-/* ===========================
-   GLOBAL
-=========================== */
+/* =========================================================
+   ALL THE BEST — SARALI SWARAS PRACTICE
+   ========================================================= */
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+:root {
+  --bg: #f7f5f0;
+  --card: #ffffff;
+  --text: #252525;
+  --muted: #777;
+  --border: #e5e1d8;
 
-body{
+  --accent: #7b4b2a;
+  --accent-light: #f1e5d9;
 
-    font-family:"Comic Sans MS","Trebuchet MS",sans-serif;
+  --active: #ffe08a;
+  --active-border: #d59b22;
 
-    background:linear-gradient(
-    135deg,
-    #FFE082,
-    #B3E5FC,
-    #F8BBD0,
-    #D1C4E9);
+  --s: #b3261e;
+  --r: #d46a1f;
+  --g: #b8860b;
+  --m: #3c7a57;
+  --p: #246b9b;
+  --d: #7547a3;
+  --n: #a33f72;
 
-    height:100vh;
-
-    overflow:hidden;
-
-}
-
-
-/* ===========================
-   MAIN CONTAINER
-=========================== */
-
-.container{
-
-    width:min(96vw,1700px);
-
-    height:100vh;
-
-    margin:auto;
-
-    padding:12px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:10px;
-
+  --radius: 18px;
 }
 
 
+/* =========================================================
+   RESET
+   ========================================================= */
 
-/* ===========================
+* {
+  box-sizing: border-box;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   MAIN APP
+   ========================================================= */
+
+.app {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 42px 0 60px;
+}
+
+
+/* =========================================================
    HEADER
-=========================== */
+   ========================================================= */
 
-.header{
-
-    text-align:center;
-
+header {
+  margin-bottom: 28px;
 }
 
 
-.header h1{
+.eyebrow {
+  margin: 0 0 6px;
 
-    font-size:36px;
+  color: var(--accent);
 
-    color:#6A1B9A;
+  font-size: 0.75rem;
+  font-weight: 800;
 
-    text-shadow:2px 2px 8px white;
-
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
 
-.subtitle{
+h1 {
+  margin: 0;
 
-    font-size:16px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
 
-    color:#1565C0;
-
-    font-weight:bold;
-
+  letter-spacing: -0.03em;
 }
 
 
+.subtitle {
+  margin: 10px 0 0;
 
-/* ===========================
-   TOP PANEL
-=========================== */
+  color: var(--muted);
 
-.topPanel{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:40px;
-
+  font-size: 1rem;
 }
 
 
-.control{
+/* =========================================================
+   CARDS
+   ========================================================= */
 
-    display:flex;
+.card {
+  margin-bottom: 18px;
 
-    align-items:center;
+  padding: 24px;
 
-    gap:10px;
+  background: var(--card);
 
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius);
+
+  box-shadow:
+    0 4px 18px rgba(0, 0, 0, 0.035);
 }
 
 
-.control label{
+/* =========================================================
+   CONTROLS
+   ========================================================= */
 
-    font-size:22px;
+.controls {
+  display: flex;
 
-    color:#1565C0;
+  align-items: center;
+  justify-content: space-between;
 
-    font-weight:bold;
+  gap: 24px;
 
+  flex-wrap: wrap;
 }
 
 
+.control-group {
+  display: flex;
 
-select{
+  gap: 18px;
 
-    font-size:18px;
-
-    padding:8px 15px;
-
-    border-radius:15px;
-
-    border:none;
-
-    background:white;
-
-    box-shadow:0 4px 10px rgba(0,0,0,.15);
-
+  flex-wrap: wrap;
 }
 
 
+label {
+  display: flex;
 
-/* ===========================
+  flex-direction: column;
+
+  gap: 7px;
+
+  color: #555;
+
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+
+select {
+  min-width: 150px;
+
+  padding: 11px 34px 11px 13px;
+
+  background: #fff;
+
+  border: 1px solid #d8d3c9;
+
+  border-radius: 10px;
+
+  color: var(--text);
+
+  font: inherit;
+  font-size: 0.92rem;
+
+  cursor: pointer;
+
+  outline: none;
+}
+
+
+select:focus {
+  border-color: var(--accent);
+
+  box-shadow:
+    0 0 0 3px rgba(123, 75, 42, 0.12);
+}
+
+
+/* =========================================================
    BUTTONS
-=========================== */
+   ========================================================= */
 
+.button-group {
+  display: flex;
 
-.buttonPanel{
+  gap: 10px;
 
-    display:flex;
-
-    justify-content:center;
-
-    gap:20px;
-
+  flex-wrap: wrap;
 }
 
 
-button{
+button {
+  border: 0;
 
-    border:none;
+  border-radius: 11px;
 
-    border-radius:40px;
+  padding: 11px 18px;
 
-    padding:10px 28px;
+  background: var(--accent);
 
-    font-size:20px;
+  color: white;
 
-    font-weight:bold;
+  font: inherit;
 
-    color:white;
+  font-size: 0.9rem;
+  font-weight: 750;
 
-    cursor:pointer;
+  cursor: pointer;
 
+  transition:
+    transform 0.15s ease,
+    opacity 0.15s ease,
+    box-shadow 0.15s ease;
 }
 
 
+button:hover {
+  transform: translateY(-1px);
 
-#startBtn{
-    background:#43A047;
-}
-
-#pauseBtn{
-    background:#FB8C00;
-}
-
-#restartBtn{
-    background:#1E88E5;
+  box-shadow:
+    0 5px 14px rgba(0, 0, 0, 0.12);
 }
 
 
-
-/* ===========================
-   LYRICS / SWARA BOX
-=========================== */
-
-
-.notes-box{
-
-    background:white;
-
-    border-radius:25px;
-
-    box-shadow:0 10px 25px rgba(0,0,0,.15);
-
-    height:360px;
-
-    overflow:hidden;
-
-    padding:10px;
-
+button:active {
+  transform: translateY(0);
 }
 
 
-.notes-box h2{
+button.secondary {
+  background: #eee9e1;
 
-    text-align:center;
-
-    color:#7B1FA2;
-
-    font-size:26px;
-
-    margin-bottom:5px;
-
+  color: #4b433c;
 }
 
 
+button:focus-visible {
+  outline: 3px solid rgba(123, 75, 42, 0.25);
 
-#notesDisplay{
-
-    height:100%;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
-
-    gap:8px;
-
-    padding:5px;
-
-    overflow:visible;
-
+  outline-offset: 2px;
 }
 
 
+/* =========================================================
+   TANPURA
+   ========================================================= */
 
-/* SWARA LINE */
+.tanpura {
+  display: flex;
 
-.note-line{
+  align-items: center;
+  justify-content: space-between;
 
-    display:flex;
+  gap: 24px;
 
-    justify-content:center;
-
-    align-items:center;
-
-    flex-wrap:wrap;
-
+  flex-wrap: wrap;
 }
 
 
+.tanpura h2 {
+  margin: 0;
 
-/* ===========================
-   SWARA TILES
-=========================== */
-
-
-.swara{
-
-    width:55px;
-
-    height:55px;
-
-    margin:4px;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    border-radius:15px;
-
-    font-size:28px;
-
-    font-weight:bold;
-
-    color:#333;
-
-    box-shadow:0 4px 10px rgba(0,0,0,.15);
-
-    transition:.25s;
-
+  font-size: 1.2rem;
 }
 
 
+.tanpura p {
+  margin: 4px 0 0;
 
-.swara:nth-child(7n+1){
-    background:#FFE082;
-}
+  color: var(--muted);
 
-.swara:nth-child(7n+2){
-    background:#A5D6A7;
-}
-
-.swara:nth-child(7n+3){
-    background:#90CAF9;
-}
-
-.swara:nth-child(7n+4){
-    background:#CE93D8;
-}
-
-.swara:nth-child(7n+5){
-    background:#FFCC80;
-}
-
-.swara:nth-child(7n+6){
-    background:#F48FB1;
-}
-
-.swara:nth-child(7n){
-    background:#80DEEA;
+  font-size: 0.86rem;
 }
 
 
+.tanpura-controls {
+  display: flex;
 
-.swara.active{
+  align-items: end;
 
-    transform:scale(1.2);
+  gap: 14px;
 
-    background:#FF5252 !important;
-
-    color:white;
-
+  flex-wrap: wrap;
 }
 
 
+.volume {
+  min-width: 150px;
+}
 
-/* ===========================
+
+.volume input {
+  width: 150px;
+
+  accent-color: var(--accent);
+}
+
+
+.volume output {
+  color: var(--accent);
+
+  font-size: 0.78rem;
+}
+
+
+/* =========================================================
+   NOTATION CARD
+   ========================================================= */
+
+.notation-card {
+  padding: 28px;
+}
+
+
+.notation-heading {
+  display: flex;
+
+  align-items: end;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 24px;
+}
+
+
+.notation-heading h2 {
+  margin: 0;
+
+  font-size: 1.55rem;
+}
+
+
+#speedHint {
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 0.85rem;
+  font-weight: 650;
+}
+
+
+/* =========================================================
+   NOTATION GRID
+   ========================================================= */
+
+.notation-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  gap: 32px;
+
+  padding-top: 4px;
+}
+
+
+.notation-grid > div {
+  min-width: 0;
+}
+
+
+.notation-grid h3 {
+  margin: 0 0 14px;
+
+  color: #777;
+
+  font-size: 0.78rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   SWARA ROWS
+   ========================================================= */
+
+.notation {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+
+.swara-row {
+  display: grid;
+
+  grid-template-columns:
+    repeat(8, minmax(38px, 1fr));
+
+  gap: 7px;
+}
+
+
+/* =========================================================
+   SWARA BOX
+   ========================================================= */
+
+.swara {
+  min-height: 48px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #e3ded5;
+
+  border-radius: 9px;
+
+  background: #fbfaf7;
+
+  font-family:
+    "Noto Sans",
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 1.05rem;
+
+  font-weight: 750;
+
+  transition:
+    background 0.08s linear,
+    border-color 0.08s linear,
+    transform 0.08s linear,
+    box-shadow 0.08s linear;
+}
+
+
+/* =========================================================
+   SWARA COLOURS
+   ========================================================= */
+
+.s-note {
+  color: var(--s);
+}
+
+
+.r-note {
+  color: var(--r);
+}
+
+
+.g-note {
+  color: var(--g);
+}
+
+
+.m-note {
+  color: var(--m);
+}
+
+
+.p-note {
+  color: var(--p);
+}
+
+
+.d-note {
+  color: var(--d);
+}
+
+
+.n-note {
+  color: var(--n);
+}
+
+
+/* =========================================================
+   REST / DOT
+   ========================================================= */
+
+.swara[data-rest="true"] {
+  color: transparent;
+
+  background: #f4f1eb;
+
+  border-color: #eeeae2;
+}
+
+
+/* =========================================================
+   ACTIVE SWARA
+   ========================================================= */
+
+.swara.active {
+  background: var(--active);
+
+  border-color: var(--active-border);
+
+  color: #33270f;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 5px 12px rgba(180, 130, 20, 0.18);
+}
+
+
+/* =========================================================
    TALA
-=========================== */
+   ========================================================= */
+
+.tala {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 24px;
+
+  flex-wrap: wrap;
+}
 
 
-.tala-box{
+.tala h2 {
+  margin: 0;
 
-    background:white;
+  font-size: 1.2rem;
+}
 
-    border-radius:25px;
 
-    padding:10px;
+.tala p {
+  margin: 4px 0 0;
 
-    box-shadow:0 10px 25px rgba(0,0,0,.15);
+  color: var(--muted);
+
+  font-size: 0.85rem;
+}
+
+
+.beats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(8, 42px);
+
+  gap: 8px;
+}
+
+
+.beat {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #ddd7cd;
+
+  border-radius: 50%;
+
+  background: #faf8f4;
+
+  color: #777;
+
+  font-size: 0.8rem;
+
+  font-weight: 750;
+
+  transition:
+    background 0.08s linear,
+    color 0.08s linear,
+    transform 0.08s linear;
+}
+
+
+.beat.active {
+  background: var(--accent);
+
+  border-color: var(--accent);
+
+  color: white;
+
+  transform: scale(1.08);
+}
+
+
+/* =========================================================
+   AUDIO AREA
+   ========================================================= */
+
+.audio-area {
+  margin-top: 8px;
+}
+
+
+audio {
+  display: none;
+}
+
+
+.progress-container {
+  width: 100%;
+
+  height: 5px;
+
+  overflow: hidden;
+
+  background: #e7e2d9;
+
+  border-radius: 999px;
+}
+
+
+.progress-bar {
+  width: 0;
+  height: 100%;
+
+  background: var(--accent);
+
+  border-radius: inherit;
+
+  transition: width 0.08s linear;
+}
+
+
+.audio-message {
+  min-height: 22px;
+
+  margin: 9px 0 0;
+
+  color: #a33;
+
+  font-size: 0.82rem;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .app {
+    width: min(
+      100% - 20px,
+      680px
+    );
+
+    padding-top: 25px;
+  }
+
+
+  .notation-grid {
+    grid-template-columns: 1fr;
+
+    gap: 26px;
+  }
+
+
+  .notation-heading {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+
+  .controls {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+
+  .tanpura {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+
+  .tanpura-controls {
+    width: 100%;
+
+    align-items: flex-start;
+  }
+
+
+  .tala {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
 
 }
 
 
+@media (max-width: 520px) {
 
-.tala-box h2{
+  .app {
+    width: calc(100% - 16px);
 
-    text-align:center;
+    padding-top: 18px;
+  }
 
-    color:#7B1FA2;
 
-    font-size:24px;
+  .card {
+    padding: 18px;
+  }
+
+
+  .swara-row {
+    grid-template-columns:
+      repeat(8, minmax(30px, 1fr));
+
+    gap: 4px;
+  }
+
+
+  .swara {
+    min-height: 40px;
+
+    font-size: 0.9rem;
+
+    border-radius: 7px;
+  }
+
+
+  .beats {
+    grid-template-columns:
+      repeat(8, 32px);
+
+    gap: 5px;
+  }
+
+
+  .beat {
+    width: 32px;
+    height: 32px;
+
+    font-size: 0.7rem;
+  }
+
+
+  .control-group,
+  .button-group {
+    width: 100%;
+  }
+
+
+  .control-group label,
+  .control-group select {
+    width: 100%;
+  }
+
+
+  .tanpura-controls {
+    width: 100%;
+  }
+
+
+  .tanpura-controls > * {
+    width: 100%;
+  }
+
+
+  .volume input {
+    width: 100%;
+  }
+
+}
+
+/* =========================================================
+   METRONOME
+   ========================================================= */
+
+.metronome {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 24px;
+
+  flex-wrap: wrap;
+}
+
+
+.metronome-info h2 {
+  margin: 0;
+
+  font-size: 1.2rem;
+}
+
+
+.metronome-info p {
+  margin: 4px 0 0;
+
+  color: var(--muted);
+
+  font-size: 0.85rem;
+}
+
+
+.metronome-controls {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  flex-wrap: wrap;
+}
+
+
+.bpm-adjust {
+  width: 38px;
+  height: 38px;
+
+  padding: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #eee9e1;
+
+  color: #4b433c;
+
+  font-size: 1.25rem;
+}
+
+
+.bpm-adjust:hover {
+  background: #e3ddd3;
+
+  box-shadow: none;
+}
+
+
+.bpm-display {
+  min-width: 72px;
+
+  display: flex;
+
+  align-items: baseline;
+  justify-content: center;
+
+  gap: 4px;
+}
+
+
+.bpm-display strong {
+  font-size: 1.35rem;
+
+  color: var(--accent);
+}
+
+
+.bpm-display span {
+  color: var(--muted);
+
+  font-size: 0.75rem;
+
+  font-weight: 700;
+}
+
+
+#bpmSlider {
+  width: 180px;
+
+  accent-color: var(--accent);
+
+  cursor: pointer;
+}
+
+
+@media (max-width: 800px) {
+
+  .metronome {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
 
 }
 
 
+@media (max-width: 520px) {
 
-#talaContainer{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:12px;
-
-}
+  .metronome-controls {
+    width: 100%;
+  }
 
 
-
-.talaBeat{
-
-    width:60px;
-
-    height:60px;
-
-    border-radius:15px;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    flex-direction:column;
-
-    font-size:18px;
-
-    font-weight:bold;
-
-}
-
-
-
-.talaBeat:nth-child(1){background:#FFE082;}
-.talaBeat:nth-child(2){background:#A5D6A7;}
-.talaBeat:nth-child(3){background:#90CAF9;}
-.talaBeat:nth-child(4){background:#CE93D8;}
-.talaBeat:nth-child(5){background:#FFCC80;}
-.talaBeat:nth-child(6){background:#F48FB1;}
-.talaBeat:nth-child(7){background:#80DEEA;}
-.talaBeat:nth-child(8){background:#C5E1A5;}
-
-
-
-.talaBeat.active{
-
-    transform:scale(1.15);
-
-    background:#43A047 !important;
-
-    color:white;
-
-}
-
-
-
-#talaText{
-
-    text-align:center;
-
-    margin-top:8px;
-
-    font-size:18px;
-
-    font-weight:bold;
-
-    color:#6A1B9A;
-
-}
-
-
-
-/* ===========================
-   STATUS
-=========================== */
-
-
-.statusBox{
-
-    text-align:center;
-
-}
-
-
-#status{
-
-    font-size:20px;
-
-    font-weight:bold;
-
-    color:#E65100;
+  #bpmSlider {
+    width: 100%;
+    order: 10;
+  }
 
 }
